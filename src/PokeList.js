@@ -3,7 +3,7 @@ import request from 'superagent';
 import PokeItem from './PokeItem.js';
 //will need to inport searchPoke
 
-export default class Home extends Component {
+export default class PokeList extends Component {
     //set state for poke and search query
 
     //set up async function for componentdid Mount

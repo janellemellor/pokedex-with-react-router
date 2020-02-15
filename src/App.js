@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Home from './Home.js';
+import PokeList from './PokeList.js/index.js';
 
 export default class App extends Component {
   render() {
