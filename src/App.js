@@ -5,7 +5,7 @@ import {
   Switch, 
   Link, 
   BrowserRouter as Router,
-} from './react-router-dom';
+} from 'react-router-dom';
 import Detail from './Detail.js';
 import PokeList from './PokeList.js';
 import About from './About.js';

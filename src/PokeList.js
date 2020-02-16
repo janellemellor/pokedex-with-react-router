@@ -16,7 +16,7 @@ export default class PokeList extends Component {
     //set up async function for componentDidMount
     async componentDidMount() {
         if(this.props.match.params.pokemon) {
-            const pokeData = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.props.match.params.pokemon}`)
+            const pokeData = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?${this.props.match.params.pokemon}`)
 
             this.setState({ pokemon: pokeData.response.results })
         }
@@ -25,7 +25,7 @@ export default class PokeList extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
 
-        const pokeData = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.searchQuery}`)
+        const pokeData = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?${this.state.searchQuery}`)
 
         this.setState({ pokemon: pokeData.response.results })
 
