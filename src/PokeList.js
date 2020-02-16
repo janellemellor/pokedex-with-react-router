@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import request from 'superagent';
 import PokeItem from './PokeItem.js';
 import SearchPoke from './SearchPoke.js';
+import { Link } from 'react-router-dom';
 
 
 export default class PokeList extends Component {
@@ -47,12 +48,10 @@ export default class PokeList extends Component {
                 <main>
                     <ul>
                          {this.state.pokemon.map(poke => 
-                         //add router link here?
-                         <PokeItem poke={poke} />
-                         )}
-                        
-                         
-                            
+                         <Link to={`pokemon/${poke.title}`}>
+                            <PokeItem poke={poke} />
+                         </Link>  
+                         )}  
                     </ul>
                 </main>
                 

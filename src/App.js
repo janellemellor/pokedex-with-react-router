@@ -17,7 +17,7 @@ export default class App extends Component {
       <Router>
         <div>
           <Link to="/">return home</Link>
-          {/* <Link to=''About Pokedex></Link> */}
+          <Link to='/'>About Pokedex</Link>
           <Switch>
             <Route exact path='/' component={PokeList} />
             <Route exact path='/' component={About} />
