@@ -17,11 +17,11 @@ export default class App extends Component {
       <Router>
         <div>
           <Link to="/">return home</Link>
-          <Link to='/'>About Pokedex</Link>
+          <Link to='/about-pokedex'>About Pokedex</Link>
           <Switch>
             <Route exact path='/' component={PokeList} />
-            <Route exact path='/about' component={About} />
-            <Route exact path='/' component={Detail} />
+            <Route exact path='/about-pokedex' component={About} />
+            <Route exact path='/detail/:pokeId' component={Detail} />
           </Switch>
 
          

@@ -48,7 +48,7 @@ export default class PokeList extends Component {
                 <main>
                     <ul>
                          {this.state.pokemon.map(poke => 
-                         <Link to={`pokemon/${poke.title}`}>
+                         <Link to={`/detail/${poke.pokemon}`}>
                             <PokeItem poke={poke} key={poke.id}/>
                          </Link>  
                          )}  
