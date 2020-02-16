@@ -17,7 +17,7 @@ export default class PokeList extends Component {
     async componentDidMount() {
         if(this.props.match.params.pokemon) {
             const pokeData = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?${this.props.match.params.pokemon}`)
-
+            
             this.setState({ pokemon: pokeData.response.results })
         }
     }
@@ -25,12 +25,12 @@ export default class PokeList extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
 
-        const pokeData = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?${this.state.searchQuery}`)
-
-        this.setState({ pokemon: pokeData.response.results })
+        const pokeData = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.searchQuery}`)
+        console.log(pokeData);
+        this.setState({ pokemon: pokeData.body.results })
 
         //history.push is a react router method
-        this.props.history.push(this.state.searchQuery)
+        // this.props.history.push(this.state.searchQuery)
         }
 
 
@@ -49,7 +49,7 @@ export default class PokeList extends Component {
                     <ul>
                          {this.state.pokemon.map(poke => 
                          <Link to={`pokemon/${poke.title}`}>
-                            <PokeItem poke={poke} />
+                            <PokeItem poke={poke} key={poke.id}/>
                          </Link>  
                          )}  
                     </ul>

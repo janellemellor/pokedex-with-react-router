@@ -20,7 +20,7 @@ export default class App extends Component {
           <Link to='/'>About Pokedex</Link>
           <Switch>
             <Route exact path='/' component={PokeList} />
-            <Route exact path='/' component={About} />
+            <Route exact path='/about' component={About} />
             <Route exact path='/' component={Detail} />
           </Switch>
 
