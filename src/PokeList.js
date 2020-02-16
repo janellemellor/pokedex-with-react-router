@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import request from 'superagent';
 import PokeItem from './PokeItem.js';
 import SearchPoke from './SearchPoke.js';
-g
+
 
 export default class PokeList extends Component {
      //set state for poke and search query. ('pokemon' is key for name in API object)

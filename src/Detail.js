@@ -3,14 +3,21 @@ import PokeItem from './PokeItem.js';
 import { getPoke } from './pokedexApi.js';
 
 export default class Detail extends Component {
-    //set state for poke
+    
+    state = { poke: {} }
+    
+    async componentDidMount() {
+        const pokeData = await getPoke(this.props.matchparams.pokeId);
 
-    //add componentDidMount with async/await get pokemon data from api
-
-    //update state with poke data
+        if (pokeData.response.results) {
+        
+        this.setState({ poke: pokeData.response.results[0] })
+        }
+    }
+    
 
     render() {
-        //set up state for poke below
+        const { poke } = this.state;
 
         return (
             <div>
