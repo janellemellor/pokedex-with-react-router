@@ -16,7 +16,7 @@ export default class PokeList extends Component {
         if(this.props.match.params.pokemon) {
             const pokeData = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?${this.props.match.params.pokemon}`)
             
-            this.setState({ pokemon: pokeData.response.results })
+            this.setState({ pokemon: pokeData.body.results })
         }
     }
 
@@ -24,8 +24,10 @@ export default class PokeList extends Component {
         e.preventDefault();
 
         const pokeData = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.searchQuery}`)
-        console.log(pokeData);
+        
         this.setState({ pokemon: pokeData.body.results })
+
+        this.props.history.push(this.state.searchQuery)
 
     
         }
