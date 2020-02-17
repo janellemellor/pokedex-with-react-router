@@ -6,14 +6,12 @@ import { Link } from 'react-router-dom';
 
 
 export default class PokeList extends Component {
-     //set state for poke and search query. ('pokemon' is key for name in API object)
     state = {
         pokemon: [],
         searchQuery: this.props.match.params.pokemon,
     }
    
 
-    //set up async function for componentDidMount
     async componentDidMount() {
         if(this.props.match.params.pokemon) {
             const pokeData = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?${this.props.match.params.pokemon}`)
@@ -29,8 +27,7 @@ export default class PokeList extends Component {
         console.log(pokeData);
         this.setState({ pokemon: pokeData.body.results })
 
-        //history.push is a react router method
-        // this.props.history.push(this.state.searchQuery)
+    
         }
 
 

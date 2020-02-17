@@ -16,18 +16,13 @@ export default class App extends Component {
     return (
       <Router>
         <div>
-          <Link to="/">return home</Link>
-          <Link to='/about-pokedex'>About Pokedex</Link>
+          <Link className="page-links" to="/">return home</Link>
+          <Link className="page-links" to="/about-pokedex">About Pokedex</Link>
           <Switch>
-            <Route exact path='/' component={PokeList} />
-            <Route exact path='/about-pokedex' component={About} />
-            <Route exact path='/detail/:pokeId' component={Detail} />
+            <Route exact path="/" component={PokeList} />
+            <Route exact path="/about-pokedex" component={About} />
+            <Route exact path="/detail/:pokeId" component={Detail} />
           </Switch>
-
-         
-        
-
-
 
           </div>
       </Router>
