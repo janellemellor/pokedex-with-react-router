@@ -67,8 +67,8 @@ export default class PokeList extends Component {
                     <ul>
                         {/* build a list of pokemon (could write this as a function in render and pass it down) */}
                          {this.state.pokemon.map(poke => 
-                         <Link to={`/detail/${poke.pokemon}`}>
-                            <PokeItem poke={poke} key={poke.id}/>
+                         <Link  key={poke.id} to={`/detail/${poke.pokemon}`}>
+                            <PokeItem poke={poke}/>
                          </Link>  
                          )}  
                     </ul>

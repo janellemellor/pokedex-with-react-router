@@ -10,11 +10,10 @@ export default class PokeItem extends Component {
             type_2, 
             ability_1, 
             ability_2,
-            id,
         } = poke;
 
         return (
-            <li key={ id }>
+            <li >
                 <h3>{ pokemon }</h3>
                 <img src={ url_image } alt=''></img>    
                 <p>Type 1: { type_1 }</p>
