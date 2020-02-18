@@ -1,21 +1,31 @@
 import React, { Component } from 'react'
 
-export default class Paging extends Component {
-
+export default class Pagination extends Component {
+  
 
     render() {
+        //if there are no results, add text to user that says no results here
+
         return (
+        //pass button handler props and disable function below: 
             <div>
-                
+                <button>
+
+                </button>
+                <span></span>
+                <button> 
+
+                </button>
+
             </div>
         )
     }
 }
 
 
-// import React, { Component } from "react";
 
 
+//example paging code from my last pokedex app
 // export default class Paging extends Component {
 //     state = {
 //         page: 1
